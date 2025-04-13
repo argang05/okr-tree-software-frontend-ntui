@@ -19,6 +19,7 @@ export default function ObjectiveDialog({
   const [formData, setFormData] = useState({
     title: "",
     description: "",
+    assumption: "",
     level: "COMPANY",
     dueDate: "",
     progressPercentage: 0
@@ -31,6 +32,7 @@ export default function ObjectiveDialog({
       setFormData({
         title: initialData?.title || "",
         description: initialData?.description || "",
+        assumption: initialData?.assumption || "",
         level: initialData?.level || "COMPANY",
         dueDate: initialData?.dueDate ? new Date(initialData.dueDate).toISOString().split('T')[0] : "",
         progressPercentage: initialData?.progressPercentage || 0
@@ -123,6 +125,21 @@ export default function ObjectiveDialog({
               value={formData.description}
               onChange={handleChange}
               placeholder="Enter objective description"
+              disabled={isLoading}
+              rows={3}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="assumption" className="text-sm font-medium">
+              Assumption
+            </label>
+            <Textarea
+              id="assumption"
+              name="assumption"
+              value={formData.assumption}
+              onChange={handleChange}
+              placeholder="Enter objective assumption"
               disabled={isLoading}
               rows={3}
             />

@@ -20,6 +20,7 @@ export default function TaskDialog({
   const [formData, setFormData] = useState({
     title: "",
     description: "",
+    assumption: "",
     dueDate: "",
     status: "PENDING",
     assignedTo: [],
@@ -80,6 +81,7 @@ export default function TaskDialog({
       setFormData({
         title: initialData?.title || "",
         description: initialData?.description || "",
+        assumption: initialData?.assumption || "",
         dueDate: initialData?.dueDate || getDefaultDueDate(),
         status: initialData?.status || "PENDING",
         assignedTo: initialData?.assignedTo || [],
@@ -193,6 +195,21 @@ export default function TaskDialog({
               id="description"
               name="description"
               value={formData.description}
+              onChange={handleChange}
+              placeholder="Enter task description"
+              disabled={isLoading}
+              rows={3}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="assumption" className="text-sm font-medium">
+              Assumption
+            </label>
+            <Textarea
+              id="assumption"
+              name="assumption"
+              value={formData.assumption}
               onChange={handleChange}
               placeholder="Enter task description"
               disabled={isLoading}

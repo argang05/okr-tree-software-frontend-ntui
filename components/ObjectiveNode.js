@@ -227,6 +227,10 @@ export default function ObjectiveNode({
           </div>
           
           <p className="text-sm text-gray-600 mb-3 line-clamp-2">{objective.description}</p>
+
+          <p className="text-sm text-gray-600 mb-3 line-clamp-2 font-semibold">
+            Assumption: {objective.assumption ? objective.assumption : "No Assumption"}
+          </p>
           
           {objective.dueDate && (
             <div className="mb-3 flex items-center text-xs text-slate-600">

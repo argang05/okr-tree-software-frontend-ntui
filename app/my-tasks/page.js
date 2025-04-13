@@ -210,6 +210,9 @@ export default function MyTasksPage() {
                   <p className="text-sm text-slate-600 mb-4 line-clamp-2">
                     {task.description}
                   </p>
+                  <p className="text-sm text-slate-600 mb-4 line-clamp-2 font-semibold">
+                    Task Assumption: {task.assumption ? task.assumption : "No Assumption"}
+                  </p>
                   
                   {editMode[task.id] ? (
                     <div className="space-y-4">

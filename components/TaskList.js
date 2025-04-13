@@ -102,6 +102,7 @@ export default function TaskList({ tasks = [], onTaskUpdate, employeeMap = {} })
               </div>
               
               <p className="text-sm text-slate-600 mb-2">{task.description}</p>
+              <p className="text-sm text-slate-600 mb-2 font-semibold">Task Assumption: {task.assumption ? task.assumption : "No Asssumption"}</p>
               
               <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
                 <div className="flex items-center gap-1">
